@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no">
+        <title>appS1
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">   
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body onresize="resizer()">
+        
+  
+        <div id="dvHeader" class="cheader">
+                <label id="appTitle">VtasGPS</label>
+        </div>
+
+        <div id="dvContenedor" class="contenedor" data-role="page">
+            <!-- divMain-->
+            <div id="dvHome" class="divFrag">     
+                <a href="#dvdialog" data-rel="dialog" data-transition="slidedown">Mostrar Dialogo</a><hr>
+                <h1>hello world to this app</h1>       
+            </div>
+            <!-- fin divMain-->
+            
+            <!-- divGPS Map-->
+            <div id="dvGPSmap" class="divFrag">
+                <div data-role="collapsible" data-iconpos="right">
+                    <h1>Filtros</h1>
+                    <laber for="use-gps">Activar GPS:</laber>
+                    <input type="checkbox" data-role="flipswitch" onchange="gpsactivate(this)" checked>
+                    <br />
+                    <laber for="alqvta">Alquiler/Venta:</laber>
+                        <select>
+                            <option value="todo_vta">Todo</option>
+                            <option value="alquiler">Alquiler</option>
+                            <option value="venta">Venta</option>
+                        </select>
+                    <br>
+                    <div id="form_gps">
+                        <laber for="range-km">Distancia KM:</laber>
+                        <input type="range" name="rang-km" min="1" max="100" value="10" step="1" data-highlight="true">
+                    </div>    
+                    <div id="form_ngps">            
+                        <laber for="ciudad">Ciudad:</laber>
+                        <select>
+                            <option value="todo">Todo</option>
+                            <option value="teg">Tegucigalpa</option>
+                            <option value="dan">Danli</option>
+                        </select>
+                    </div>    
+                    <laber for="tipo_obj">Tipo Inmueble:</laber>
+                    <select>
+                        <option value="todo_ap">Todo</option>
+                        <option value="apartamento">Apartamento</option>
+                        <option value="casa">Casa</option>
+                    </select>
+                    <laber for="range-l">Precio L.:</laber>
+                    <input type="range" name="rang-l" min="1000" max="100000" value="5000" step="500" data-highlight="true">
+                   
+                    <br />
+                    <button class="ui-btn ui-btn-b" onclick="gps_buscar()">Buscar</button>
+                </div>  
+                <br> 
+                <div id="map01"style="width:100%; height:400px"></div>  
+                <div id="dvGPSdet">
+                    <div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin divGPS Map-->
+
+    
+        </div>
+        <ul class="menubar">
+            <li><a href="#"  id="mHome"><img src="img/home_b.png" width="28px" height="30x"/></a></li>
+            <li><a href="#" id="mGPSmap"><img src="img/gps_white.jpg" width="28px" height="30x"/></a></li>
+            <li><a href="#" id="mFavs"><img src="img/star_w.png" width="28px" height="30x"/></a></li>
+            <li><a href="#" id="mBook"><img src="img/book_white.png" width="28px" height="30x"/></a></li>
+            <!--<li><a href="#" id="mMenu"><img src="img/other_b.png" width="28px" height="30x"/></a></li>-->
+        </ul>
+
+        <!-- Dialog only page -->
+        <div data-role="page" id="dvdialog" data-theme="a" data-rel="back" data-close-btn="right" style="margin-top: 100px;">
+            <div data-role="header" data-theme="b"><h1>VtasGPS</h1></div>
+            <div data-role="content">
+              <p>Clicked content!</p>
+              
+              <center><a href="#" data-rel="back" class="ui-btn  ui-corner-all">Ok</a></center>   
+            </div>
+          </div> 
+       
+    </body> 
+    
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->    
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/js_db.js"></script>       
+    <script defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBSg6bW77fifUZWQhaunZXYGi9RilliqQ&callback=initMap"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+</html>
+
