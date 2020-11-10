@@ -232,6 +232,7 @@ function switch_menu(vId){
     if(vId=='mMenu'){        
         hideDivs();
         $("#dvMenu").show();
+        $("#appTitle").html('Menu+');
     }if(vId=='mOrg'){        
         hideDivs();
         $("#dvOrgs").show();
@@ -244,8 +245,8 @@ function switch_menu(vId){
     }if(vId=='mFavs'){        
         hideDivs();
         $("#dvFavs").show();        
-        getEventFServer(2);
-        $("#appTitle").html('Eventos Favoritos');
+        //getEventFServer(2);
+        $("#appTitle").html('Favoritos');
     }if(vId=='mMyOrg'){        
         hideDivs();
         $("#dvMyOrg").show();
@@ -253,7 +254,6 @@ function switch_menu(vId){
         hideDivs();
         $("#dvBook").show();
         getLecturasFServer();
-        $("#appTitle").html('Menu+');
     }
     
 }
@@ -304,7 +304,7 @@ function showPublicaciones(){
     vStrHtml = '';
     $("#dvHome").html('');
     for(i=0;i<arrPubData.length;i++){
-        vStrHtml = '<div class="card_dv" style="width:100%; padding-top:0px; border-bottom:solid #D8D8D8 8px;">';
+        vStrHtml = '<div class="card_dv" style="width:100%; padding-top:0px; border-bottom:solid #D8D8D8 10px;">';
         switch(parseInt(arrPubData[i].type))
         {
             case 100:

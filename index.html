@@ -18,9 +18,11 @@
 
         <div id="dvContenedor" class="contenedor" data-role="page">
             <!-- divMain-->
-            <div id="dvHome" class="divFrag">     
-                <a href="#dvdialog" data-rel="dialog" data-transition="slidedown">Mostrar Dialogo</a><hr>
-                <h1>hello world to this app</h1>       
+            
+            <div id="dvHome" class="divFrag">
+                <div style="width: 100%; height: 1200px; background-color:#D8D8D8; text-align: center;">
+                    <div class="lds-dual-ring" style="margin-top: 150px;"></div>
+                </div>                       
             </div>
             <!-- fin divMain-->
             
@@ -31,12 +33,22 @@
                     <laber for="use-gps">Activar GPS:</laber>
                     <input type="checkbox" data-role="flipswitch" onchange="gpsactivate(this)" checked>
                     <br />
-                    <laber for="alqvta">Alquiler/Venta:</laber>
-                        <select>
-                            <option value="todo_vta">Todo</option>
-                            <option value="alquiler">Alquiler</option>
-                            <option value="venta">Venta</option>
-                        </select>
+                    <div data-role="collapsible">
+                        <h2>Intereses</h2>
+                       
+                        <div data-role="controlgroup">                                                      
+                            <input type="checkbox" id="renta_casa">
+                            <label for="renta_casa">Alquiler Casa</label>                    
+                            <input type="checkbox" id="ranta_apto">
+                            <label for="ranta_apto">Alquiler Apartamento</label>                    
+                            <input type="checkbox" id="venta_casa">
+                            <label for="venta_casa">Venta Casa</label>                    
+                            <input type="checkbox" id="venta_terreno">
+                            <label for="venta_terreno">Venta Terreno</label>                    
+                            <input type="checkbox" id="moda_hombre">
+                            <label for="moda_hombre">Moda Caballero</label>
+                        </div>
+                    </div>
                     <br>
                     <div id="form_gps">
                         <laber for="range-km">Distancia KM:</laber>
@@ -48,17 +60,10 @@
                             <option value="todo">Todo</option>
                             <option value="teg">Tegucigalpa</option>
                             <option value="dan">Danli</option>
+                            <option value="teg">San Pedro Sula</option>
                         </select>
                     </div>    
-                    <laber for="tipo_obj">Tipo Inmueble:</laber>
-                    <select>
-                        <option value="todo_ap">Todo</option>
-                        <option value="apartamento">Apartamento</option>
-                        <option value="casa">Casa</option>
-                    </select>
-                    <laber for="range-l">Precio L.:</laber>
-                    <input type="range" name="rang-l" min="1000" max="100000" value="5000" step="500" data-highlight="true">
-                   
+
                     <br />
                     <button class="ui-btn ui-btn-b" onclick="gps_buscar()">Buscar</button>
                 </div>  
@@ -66,10 +71,106 @@
                 <div id="map01"style="width:100%; height:400px"></div>  
                 <div id="dvGPSdet">
                     <div>
+                        <p>some data here</p>
+                    </div>
+                    <div>
+                        <p>some data here</p>
+                    </div><div>
+                        <p>some data here</p>
                     </div>
                 </div>
             </div>
             <!-- fin divGPS Map-->
+
+            <!-- dv favs-->
+            <div id="dvFavs" class="divFrag">
+              
+                <div class="cDetTienda">
+                    <img width="100%" src="img/tienda001.jpg" />
+                    <h3>C.E.T. Genius Kids</h3>
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
+                        </tr>
+                        <tr>
+                            <td>Categoria:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
+                        </tr>
+                    </table>
+                </div> 
+                <div class="cDetTienda">
+                    <img width="100%" src="img/tienda001.jpg" />
+                    <h3>C.E.T. Genius Kids</h3>
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
+                        </tr>
+                        <tr>
+                            <td>Categoria:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
+                        </tr>
+                    </table>
+                </div> 
+                <div class="cDetTienda">
+                    <img width="100%" src="img/tienda001.jpg" />
+                    <h3>C.E.T. Genius Kids</h3>
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
+                        </tr>
+                        <tr>
+                            <td>Categoria:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
+                        </tr>
+                    </table>
+                </div> 
+                <div class="cDetTienda">
+                    <img width="100%" src="img/tienda001.jpg" />
+                    <h3>C.E.T. Genius Kids</h3>
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
+                        </tr>
+                        <tr>
+                            <td>Categoria:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mapa:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
+                        </tr>
+                    </table>
+                </div> 
+                <div class="cDetTienda">
+                    <img width="100%" src="img/tienda001.jpg" />
+                    <h3>C.E.T. Genius Kids</h3>
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
+                        </tr>
+                        <tr>
+                            <td>Categoria:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
+                        </tr>
+                    </table>
+                </div>                      
+            </div>
+            <!-- fin divMain-->
+
+
+            <!-- div menu+-->
+            <div id="dvMenu">
+                <ul data-role="listview" style="margin: 0;">                    
+                    <li><a href="#">Mis Intereses</a></li>
+                </ul>
+                <div data-role="collapsible" style="margin: 0;">
+                    <h2>Categorias</h2>
+                    <ul data-role="listview">
+                        <li><a href="#">Bienes Raices</a></li>
+                        <li><a href="#">Moda Damas/Caballeros/Niños(as)</a></li>
+                        <li><a href="#">Moda Deportes</a></li>
+                        <li><a href="#">Belleza y Cuidado Personal</a></li>
+                        <li><a href="#">Deportes</a></li>
+                        <li><a href="#">Alimentos y Bebidas</a></li>
+                        <li><a href="#">Otros</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end div menu+-->
 
     
         </div>
@@ -77,7 +178,7 @@
             <li><a href="#"  id="mHome"><img src="img/home_b.png" width="28px" height="30x"/></a></li>
             <li><a href="#" id="mGPSmap"><img src="img/gps_white.jpg" width="28px" height="30x"/></a></li>
             <li><a href="#" id="mFavs"><img src="img/star_w.png" width="28px" height="30x"/></a></li>
-            <li><a href="#" id="mBook"><img src="img/book_white.png" width="28px" height="30x"/></a></li>
+            <li><a href="#" id="mMenu"><img src="img/menu_dots.jpg" width="28px" height="30x"/></a></li>
             <!--<li><a href="#" id="mMenu"><img src="img/other_b.png" width="28px" height="30x"/></a></li>-->
         </ul>
 
