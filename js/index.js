@@ -9,6 +9,7 @@ var arrEventosData = [];
 var arrEventosLecturas = [];
 var arrPubData = [];
 var vMap;
+var interv;
 
 var arrMeonths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -150,6 +151,10 @@ function gpsactivate(evobj){
 }
 function getEventFServer(vDv){
 
+    clearInterval(interv);
+    vMap = null;
+    mrk = null;
+
     vMap = new google.maps.Map(document.getElementById("map01"), {
         center: { lat: 14.033708, lng: -86.568483},
         zoom: 15,
@@ -265,7 +270,11 @@ function hideDivs(){
     $("#dvGPSmap").hide();
     $("#dvFavs").hide();
     $("#dvMyOrg").hide();    
-    $("#dvBook").hide();   
+    $("#dvBook").hide(); 
+    
+    
+    $("#dvDirMap").hide();
+    $("#dvCatDet").hide();
 }
 
 function getFavsDB()
@@ -705,4 +714,36 @@ function getTimeFormat(vFormat, vHrs){
         vStrFinal = vH + ':' + vStrM;
     }
     return vStrFinal;
+}
+
+function showdirmap(idTienda)
+{
+    //dvmaptienda
+    maptienda = null;
+    mrk_tienda = null;
+
+    varTienda_name = 'Tienda Prueba';
+    varLocation = { lat: 14.033708, lng: -86.568483};
+
+    hideDivs();
+    $("#dvDirMap").show();
+    maptienda = new google.maps.Map(document.getElementById("dvmaptienda"), {
+        center: varLocation,
+        zoom: 16,
+    });
+
+    mrk_tienda = new google.maps.Marker({
+        position: varLocation,
+        title: varTienda_name,
+      });
+    mrk_tienda.setMap(maptienda);
+
+    $("#dvmaptienda").css({'width':'100%', 'height':'500px'});
+}
+
+
+function showDetCategoria(id_form)
+{
+    hideDivs();
+    $("#dvCatDet").show();
 }

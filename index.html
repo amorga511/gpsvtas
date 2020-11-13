@@ -83,56 +83,25 @@
             <!-- fin divGPS Map-->
 
             <!-- dv favs-->
-            <div id="dvFavs" class="divFrag">
-              
+            <div id="dvFavs" class="divFrag">         
                 <div class="cDetTienda">
                     <img width="100%" src="img/tienda001.jpg" />
                     <h3>C.E.T. Genius Kids</h3>
                     <table width="100%">
                         <tr>
-                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
-                        </tr>
-                        <tr>
-                            <td>Categoria:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
-                        </tr>
-                    </table>
-                </div> 
-                <div class="cDetTienda">
-                    <img width="100%" src="img/tienda001.jpg" />
-                    <h3>C.E.T. Genius Kids</h3>
-                    <table width="100%">
-                        <tr>
-                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
-                        </tr>
-                        <tr>
-                            <td>Categoria:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
-                        </tr>
-                    </table>
-                </div> 
-                <div class="cDetTienda">
-                    <img width="100%" src="img/tienda001.jpg" />
-                    <h3>C.E.T. Genius Kids</h3>
-                    <table width="100%">
-                        <tr>
-                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
-                        </tr>
-                        <tr>
-                            <td>Categoria:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
-                        </tr>
-                    </table>
-                </div> 
-                <div class="cDetTienda">
-                    <img width="100%" src="img/tienda001.jpg" />
-                    <h3>C.E.T. Genius Kids</h3>
-                    <table width="100%">
-                        <tr>
-                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
+                            <td>Horario:</td><td><span id="horario_tienda">Lunes a Viernes 8am a 5pm</span></td>
                         </tr>
                         <tr>
                             <td>Categoria:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
                         </tr>
                         <tr>
-                            <td>Mapa:</td><td><span id="strtienda_Cat">Moda Caballeros/Dama/Niños(as)</span></td>
+                            <td width="30%">Direccion:</td><td><span id="strtienda_dir">Barrio o colonia donde esta hubicada</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dir. Map:</td><td><a href="#" id="TN001" onclick="showdirmap(this.id)"><img src="img/map.png" width="30px" height="30px"></a></td>
+                        </tr>
+                        <tr>
+                            <td>Calificación:</td><td><span id="str_cali" style="font-weight: bold;">5.1 / 10</span></td>
                         </tr>
                     </table>
                 </div> 
@@ -151,16 +120,35 @@
             </div>
             <!-- fin divMain-->
 
+            <!-- div Categorias detalle-->
+            <div id="dvCatDet" class="divFrag">
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <input type="radio" name="radio_tp" id="radio_tiendas">
+                    <label for="radio_tiendas">Tiendas</label>
+                    <input type="radio" name="radio_tp" id="radio_prod" checked>
+                    <label for="radio_prod">Productos</label>
+                    
+                </fieldset>    
+                <div id="dvDetCat_items"></div>          
+
+            </div>
+            <!-- fin div Categorias detalle-->
+
+            <!-- div DirMap Tienda-->
+            <div id="dvDirMap" class="divFrag">
+                <div id="dvmaptienda"></div>
+            </div>
+            <!-- fin div DirMap Tienda-->
 
             <!-- div menu+-->
-            <div id="dvMenu">
+            <div id="dvMenu" class="divFrag">
                 <ul data-role="listview" style="margin: 0;">                    
-                    <li><a href="#">Mis Intereses</a></li>
+                    <li><a href="#dvdialog" data-rel="dialog">Mis Intereses</a></li>
                 </ul>
                 <div data-role="collapsible" style="margin: 0;">
                     <h2>Categorias</h2>
                     <ul data-role="listview">
-                        <li><a href="#">Bienes Raices</a></li>
+                        <li><a href="#" id="101" onclick="showDetCategoria(this.id)">Bienes Raices</a></li>
                         <li><a href="#">Moda Damas/Caballeros/Niños(as)</a></li>
                         <li><a href="#">Moda Deportes</a></li>
                         <li><a href="#">Belleza y Cuidado Personal</a></li>
